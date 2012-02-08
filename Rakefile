@@ -10,4 +10,9 @@ Rake::TestTask.new do |t|
   t.test_files = Dir['test/test_*.rb']
 end
 
+desc "Open an irb session preloaded with this library"
+task :console do
+  sh "irb -Ilib -rchronic"
+end
+
 task :default => :test
