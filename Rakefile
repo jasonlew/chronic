@@ -1,5 +1,3 @@
-require 'date'
-
 begin
   require 'bundler/gem_tasks'
 rescue LoadError
