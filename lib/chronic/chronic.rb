@@ -9,6 +9,8 @@ module Chronic
     :endian_precedence    => [:middle, :little],
     :ambiguous_year_future_bias => 50
   }
+  
+  SEC_PER_DAY = 86400
 
   class << self
 
@@ -50,6 +52,8 @@ module Chronic
     #
     # Returns a new Time object, or Chronic::Span if :guess option is false.
     def parse(text, opts={})
+      puts "THE CHRONIC!!!"
+      
       options = DEFAULT_OPTIONS.merge opts
 
       # ensure the specified options are valid
@@ -66,12 +70,16 @@ module Chronic
 
       # tokenize words
       tokens = tokenize(text, options)
+      
+      puts "tokens: #{tokens}"  #jlew
 
       if Chronic.debug
         puts "+#{'-' * 51}\n| #{tokens}\n+#{'-' * 51}"
       end
 
       span = tokens_to_span(tokens, options)
+      
+      puts "span: #{span}"
 
       if span
         options[:guess] ? guess(span) : span
@@ -143,7 +151,11 @@ module Chronic
     # Returns a new Time object.
     def guess(span)
       if span.width > 1
-        span.begin + (span.width / 2)
+        if span.width == SEC_PER_DAY
+          (span.begin + (span.width / 2)).to_date
+        else
+          span.begin + (span.width / 2)
+        end
       else
         span.begin
       end

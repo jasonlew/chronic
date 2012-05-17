@@ -61,7 +61,7 @@ module Chronic
     attr_accessor :now
   end
 
-  self.debug = false
+  self.debug = true #jlew
   self.time_class = Time
   
   autoload :Handler, 'chronic/handler'
