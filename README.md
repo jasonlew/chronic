@@ -13,7 +13,6 @@ for the wide variety of formats Chronic will parse.
 
     $ [sudo] gem install chronic_2001
 
-
 ## USAGE
 
 You can parse strings containing a natural language date using the
