@@ -148,7 +148,7 @@ module Chronic
     #
     # span - The Chronic::Span object to calcuate a guess from.
     #
-    # Returns a new Time object.
+    # Returns a new Time object or a new Date object
     def guess(span)
       if span.width > 1
         if span.width == SEC_PER_DAY
