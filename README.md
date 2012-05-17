@@ -1,9 +1,9 @@
-Chronic
+Chronic 2001
 =======
 
 ## DESCRIPTION
 
-Chronic is a natural language date/time parser written in pure Ruby. See below
+Chronic 2001 is a natural language date/time parser written in pure Ruby. It is derived from Chronic. See below
 for the wide variety of formats Chronic will parse.
 
 
@@ -11,13 +11,7 @@ for the wide variety of formats Chronic will parse.
 
 ### RubyGems
 
-    $ [sudo] gem install chronic
-
-### GitHub
-
-    $ git clone git://github.com/mojombo/chronic.git
-    $ cd chronic && gem build chronic.gemspec
-    $ gem install chronic-<version>.gem
+    $ [sudo] gem install chronic_2001
 
 
 ## USAGE
@@ -158,23 +152,3 @@ Chronic uses Ruby's built in Time class for all time storage and computation.
 Because of this, only times that the Time class can handle will be properly
 parsed. Parsing for times outside of this range will simply return nil.
 Support for a wider range of times is planned for a future release.
-
-
-## CONTRIBUTE
-
-If you'd like to hack on Chronic, start by forking the repo on GitHub:
-
-https://github.com/mojombo/chronic
-
-The best way to get your changes merged back into core is as follows:
-
-1. Clone down your fork
-1. Create a thoughtfully named topic branch to contain your change
-1. Hack away
-1. Add tests and make sure everything still passes by running `rake`
-1. Ensure your tests pass in multiple timezones. ie `TZ=utc rake` `TZ=BST rake`
-1. If you are adding new functionality, document it in the README
-1. Do not change the version number, we will do that on our end
-1. If necessary, rebase your commits into logical chunks, without errors
-1. Push the branch up to GitHub
-1. Send a pull request for your branch
