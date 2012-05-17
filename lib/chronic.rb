@@ -27,7 +27,7 @@ require 'date'
 #   Chronic.parse('may 27th', :guess => false)
 #     #=> Sun May 27 00:00:00 PDT 2007..Mon May 28 00:00:00 PDT 2007
 module Chronic
-  VERSION = "0.1.2"
+  VERSION = "0.1.3"
 
   class << self
 

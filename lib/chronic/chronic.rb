@@ -52,8 +52,6 @@ module Chronic
     #
     # Returns a new Time object, or Chronic::Span if :guess option is false.
     def parse(text, opts={})
-      puts "THE CHRONIC!!!"
-      
       options = DEFAULT_OPTIONS.merge opts
 
       # ensure the specified options are valid
@@ -70,16 +68,12 @@ module Chronic
 
       # tokenize words
       tokens = tokenize(text, options)
-      
-      puts "tokens: #{tokens}"  #jlew
 
       if Chronic.debug
         puts "+#{'-' * 51}\n| #{tokens}\n+#{'-' * 51}"
       end
 
       span = tokens_to_span(tokens, options)
-      
-      puts "span: #{span}"
 
       if span
         options[:guess] ? guess(span) : span
