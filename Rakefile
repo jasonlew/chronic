@@ -1,7 +1,7 @@
 require 'date'
 
 def version
-  contents = File.read File.expand_path('../lib/chronic.rb', __FILE__)
+  contents = File.read File.expand_path('../lib/chronic_2001.rb', __FILE__)
   contents[/VERSION = "([^"]+)"/, 1]
 end
 
@@ -20,7 +20,7 @@ end
 
 desc "Open an irb session preloaded with this library"
 task :console do
-  sh "irb -Ilib -rchronic"
+  sh "irb -Ilib -rchronic_2001"
 end
 
 desc "Release Chronic version #{version}"
