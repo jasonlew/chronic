@@ -27,7 +27,7 @@ require 'date'
 #   Chronic.parse('may 27th', :guess => false)
 #     #=> Sun May 27 00:00:00 PDT 2007..Mon May 28 00:00:00 PDT 2007
 module Chronic
-  VERSION = "0.1.0"
+  VERSION = "0.1.1"
 
   class << self
 
@@ -61,7 +61,7 @@ module Chronic
     attr_accessor :now
   end
 
-  self.debug = true #jlew
+  self.debug = false  #jlew
   self.time_class = Time
   
   autoload :Handler, 'chronic/handler'
